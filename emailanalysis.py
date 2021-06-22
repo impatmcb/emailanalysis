@@ -14,12 +14,12 @@ def my_form_post():
     text_sentiment = processed_text.sentiment[0]
     if text_sentiment <= -.75:
         s = 'really mean'
-    elif -.75 < text_sentiment <= -.25:
+    elif text_sentiment <= -.25:
         s = 'negative'
-    elif -.25 < text_sentiment < .25:
+    elif text_sentiment <= .25:
         s = 'relatively neutral'
-    elif .25 <= text_sentiment < .75:
+    elif text_sentiment <= .75:
         s = 'pretty positive'
-    elif text_sentiment >= .75:
+    elif text_sentiment > .75:
         s = 'extremely nice'
     return f'You typed "{text}" -- Your text was {s} with an overall sentiment score of {text_sentiment}'
